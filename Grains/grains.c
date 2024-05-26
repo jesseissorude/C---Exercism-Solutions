@@ -12,15 +12,20 @@ Write code that shows:
 how many grains were on a given square, and
 the total number of grains on the chessboard */
 
-#include <math.h>
+/*  Discussion from mentor:  Use bitwise operators (duh!)
+
+*/
+
 #include "grains.h"
 
 uint64_t square(uint8_t index) {
-    return pow(2, index-1);
+    if (index == 0 || index > 64) return 0;
+    return (uint64_t)1 << (index-1);
 }
 
 uint64_t total(void) {
     int sum = 0;
+
     for (int i=1; i<=64; i++) {
         sum += square(i);
     }
