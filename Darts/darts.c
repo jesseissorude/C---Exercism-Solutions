@@ -22,3 +22,5 @@ by a dart landing at that point.
 
 */
 
+// need to write a struct in the .h file named 'coordinate_t'
+// (based on info from the test file)
